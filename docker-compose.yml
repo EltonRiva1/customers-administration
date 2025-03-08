@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0.29
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: customers-administration
+    ports:
+      - 3306:3306
+    networks:
+      - customers-administration-network
+networks:
+  customers-administration-network:
+    driver: bridge
