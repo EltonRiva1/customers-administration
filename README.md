@@ -1,26 +1,24 @@
-📌 Customers Administration
+## 📌 Customers Administration
+
+![Badge](https://img.shields.io/badge/Status-%20Concluído-green) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.9-brightgreen)
 
 Um sistema de administração de clientes desenvolvido com Spring Boot.
 
-🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
-Java 8+
+- **Java 8**
 
-Spring Boot
+- **Spring Boot**
 
-Spring Data JPA
+- **Spring Data JPA**
 
-Hibernate
+- **Hibernate**
 
-MySQL
+- **MySQL**
 
-Thymeleaf (ou JSF, se for o caso)
+- **Maven**
 
-Lombok
-
-Maven
-
-📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 customers-administration/
 
@@ -28,7 +26,7 @@ customers-administration/
 
 │   ├── main/
 
-│   │   ├── java/com/seuusuario/customers/
+│   │   ├── java/br/com/klayrocha/
 
 │   │   ├── resources/
 
@@ -44,62 +42,50 @@ customers-administration/
 
 │── README.md
 
-⚙️ Configuração e Execução
+---
 
-📌 Pré-requisitos
+## ⚙️ Configuração e Execução
 
-JDK 8+
+## 📌 Pré-requisitos
 
-Maven
+**JDK 8**
 
-MySQL (ou outro banco configurado no application.properties)
+**Maven**
 
-▶ Passos para rodar o projeto
+**MySQL (ou outro banco configurado no application.properties)**
+
+## ▶ Passos para rodar o projeto
 1. Clone o repositório:
 
-  git clone https://github.com/EltonRiva1/customers-administration.git
+  **git clone https://github.com/EltonRiva1/customers-administration.git**
   
-  cd customers-administration
+  **cd customers-administration**
 
 2. Configure o banco de dados no application.properties:
 
-  spring.datasource.url=jdbc:mysql://localhost:3306/customers_db
+  **spring.datasource.url=jdbc:mysql://localhost:3306/customers-administration?useTimezone=true&serverTimezone=UTC**
   
-  spring.datasource.username=root
+  **spring.datasource.username=root**
   
-  spring.datasource.password=senha
+  **spring.datasource.password=root**
 
 3. Execute o projeto via Maven:
 
-   mvn spring-boot:run
+   **mvn spring-boot:run**
 
 4. Acesse no navegador:
 
-   http://localhost:8080
+   **http://localhost:8080**
 
-📜 Endpoints da API (caso tenha REST)
+## 🛠 Possíveis Melhorias
 
-Método	Endpoint	      Descrição
+**Implementação de autenticação JWT**
 
-GET	    /customers	    Lista todos os clientes
+**Integração com frontend (React, Angular, etc.)**
 
-GET	    /customers/{id}	Retorna um cliente específico
+**Implementação de testes automatizados**
 
-POST	  /customers	    Cadastra um novo cliente
-
-PUT	    /customers/{id}	Atualiza um cliente existente
-
-DELETE	/customers/{id}	Remove um cliente
-
-🛠 Possíveis Melhorias
-
-Implementação de autenticação JWT
-
-Integração com frontend (React, Angular, etc.)
-
-Implementação de testes automatizados
-
-🤝 Contribuindo
+## 🤝 Contribuindo
 
 Contribuições são bem-vindas! Para contribuir:
 
@@ -113,6 +99,6 @@ Contribuições são bem-vindas! Para contribuir:
 
 5. Abra um Pull Request
 
-📄 Licença
+---
 
-Este projeto está sob a licença MIT - sinta-se à vontade para usá-lo! 🚀
+🔹 Desenvolvido por [Elton Riva](https://github.com/EltonRiva1) 🚀
