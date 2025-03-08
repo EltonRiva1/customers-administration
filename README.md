@@ -78,25 +78,41 @@ MySQL (ou outro banco configurado no application.properties)
    http://localhost:8080
 
 📜 Endpoints da API (caso tenha REST)
+
 Método	Endpoint	      Descrição
+
 GET	    /customers	    Lista todos os clientes
+
 GET	    /customers/{id}	Retorna um cliente específico
+
 POST	  /customers	    Cadastra um novo cliente
+
 PUT	    /customers/{id}	Atualiza um cliente existente
+
 DELETE	/customers/{id}	Remove um cliente
 
 🛠 Possíveis Melhorias
+
 Implementação de autenticação JWT
+
 Integração com frontend (React, Angular, etc.)
+
 Implementação de testes automatizados
 
 🤝 Contribuindo
+
 Contribuições são bem-vindas! Para contribuir:
+
 1. Fork o repositório
+
 2. Crie uma branch (git checkout -b minha-feature)
+
 3. Faça suas alterações e commit (git commit -m 'Minha nova feature')
+
 4. Envie para o GitHub (git push origin minha-feature)
+
 5. Abra um Pull Request
 
 📄 Licença
+
 Este projeto está sob a licença MIT - sinta-se à vontade para usá-lo! 🚀
