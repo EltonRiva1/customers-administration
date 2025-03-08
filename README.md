@@ -5,12 +5,19 @@ Um sistema de administração de clientes desenvolvido com Spring Boot.
 🚀 Tecnologias Utilizadas
 
 Java 8+
+
 Spring Boot
+
 Spring Data JPA
+
 Hibernate
+
 MySQL
+
 Thymeleaf (ou JSF, se for o caso)
+
 Lombok
+
 Maven
 
 📂 Estrutura do Projeto
