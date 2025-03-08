@@ -56,16 +56,25 @@ MySQL (ou outro banco configurado no application.properties)
 
 ▶ Passos para rodar o projeto
 1. Clone o repositório:
-  git clone https://github.com/EltonRiva1/customers-administration.git
 
+  git clone https://github.com/EltonRiva1/customers-administration.git
+  
   cd customers-administration
-3. Configure o banco de dados no application.properties:
+
+2. Configure o banco de dados no application.properties:
+
   spring.datasource.url=jdbc:mysql://localhost:3306/customers_db
+  
   spring.datasource.username=root
+  
   spring.datasource.password=senha
-4. Execute o projeto via Maven:
+
+3. Execute o projeto via Maven:
+
    mvn spring-boot:run
-5. Acesse no navegador:
+
+4. Acesse no navegador:
+
    http://localhost:8080
 
 📜 Endpoints da API (caso tenha REST)
