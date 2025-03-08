@@ -1,7 +1,9 @@
 📌 Customers Administration
+
 Um sistema de administração de clientes desenvolvido com Spring Boot.
 
 🚀 Tecnologias Utilizadas
+
 Java 8+
 Spring Boot
 Spring Data JPA
@@ -12,23 +14,37 @@ Lombok
 Maven
 
 📂 Estrutura do Projeto
+
 customers-administration/
+
 │── src/
+
 │   ├── main/
+
 │   │   ├── java/com/seuusuario/customers/
+
 │   │   ├── resources/
+
 │   │   │   ├── application.properties
+
 │   │   │   ├── static/
+
 │   │   │   ├── templates/
+
 │   ├── test/
+
 │── pom.xml
+
 │── README.md
 
-
 ⚙️ Configuração e Execução
+
 📌 Pré-requisitos
+
 JDK 8+
+
 Maven
+
 MySQL (ou outro banco configurado no application.properties)
 
 ▶ Passos para rodar o projeto
