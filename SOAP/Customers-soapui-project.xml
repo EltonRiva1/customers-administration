@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="aa741ad4-c309-466b-b3e3-832c5d460480" activeEnvironment="Default" name="Customers" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="fa363dd0-f609-4078-b56c-fc4e6771f3a7" wsaVersion="NONE" name="CustomerPortSoap11" type="wsdl" bindingName="{http://klayrocha.com.br}CustomerPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/customers.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/customers.wsdl"><con:part><con:url>http://localhost:8080/ws/customers.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://klayrocha.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://klayrocha.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://klayrocha.com.br">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://klayrocha.com.br" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GetCustomerDetailRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCustomerDetailResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CustomerDetail" type="tns:CustomerDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllCustomerDetailResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="CustomerDetail" type="tns:CustomerDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllCustomerDetailRequest">
+        <xs:complexType/>
+      </xs:element>
+      <xs:complexType name="CustomerDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="phone" type="xs:string"/>
+          <xs:element name="email" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DeleteCustomerRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteCustomerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="status" type="tns:Status"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:simpleType name="Status">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SUCCESS"/>
+          <xs:enumeration value="FAILURE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="InsertCustomerRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CustomerDetail" type="tns:CustomerDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCustomerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="status" type="tns:Status"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllCustomerDetailRequest">
+    <wsdl:part element="tns:GetAllCustomerDetailRequest" name="GetAllCustomerDetailRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailResponse">
+    <wsdl:part element="tns:GetCustomerDetailResponse" name="GetCustomerDetailResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDetailResponse">
+    <wsdl:part element="tns:GetAllCustomerDetailResponse" name="GetAllCustomerDetailResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerRequest">
+    <wsdl:part element="tns:DeleteCustomerRequest" name="DeleteCustomerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerResponse">
+    <wsdl:part element="tns:DeleteCustomerResponse" name="DeleteCustomerResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerRequest">
+    <wsdl:part element="tns:InsertCustomerRequest" name="InsertCustomerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerResponse">
+    <wsdl:part element="tns:InsertCustomerResponse" name="InsertCustomerResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailRequest">
+    <wsdl:part element="tns:GetCustomerDetailRequest" name="GetCustomerDetailRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CustomerPort">
+    <wsdl:operation name="GetAllCustomerDetail">
+      <wsdl:input message="tns:GetAllCustomerDetailRequest" name="GetAllCustomerDetailRequest"></wsdl:input>
+      <wsdl:output message="tns:GetAllCustomerDetailResponse" name="GetAllCustomerDetailResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetail">
+      <wsdl:input message="tns:GetCustomerDetailRequest" name="GetCustomerDetailRequest"></wsdl:input>
+      <wsdl:output message="tns:GetCustomerDetailResponse" name="GetCustomerDetailResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input message="tns:DeleteCustomerRequest" name="DeleteCustomerRequest"></wsdl:input>
+      <wsdl:output message="tns:DeleteCustomerResponse" name="DeleteCustomerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <wsdl:input message="tns:InsertCustomerRequest" name="InsertCustomerRequest"></wsdl:input>
+      <wsdl:output message="tns:InsertCustomerResponse" name="InsertCustomerResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerPortSoap11" type="tns:CustomerPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAllCustomerDetail">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetAllCustomerDetailRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetAllCustomerDetailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetail">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetCustomerDetailRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetCustomerDetailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="DeleteCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="InsertCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="InsertCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerPortService">
+    <wsdl:port binding="tns:CustomerPortSoap11" name="CustomerPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="35d8ccae-8627-4ce1-a32d-fd263a8cf1fb" isOneWay="false" action="" name="DeleteCustomer" bindingOperationName="DeleteCustomer" type="Request-Response" outputName="DeleteCustomerResponse" inputName="DeleteCustomerRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10a9848c-214f-46ac-838a-c0e99c9a08d1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:klay="http://klayrocha.com.br">\r
+   <soapenv:Header>\r
+      <wsse:Security mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">\r
+         <wsse:UsernameToken>\r
+            <wsse:Username>klay</wsse:Username>\r
+            <wsse:Password>123</wsse:Password>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <klay:DeleteCustomerRequest>\r
+         <klay:id>2</klay:id>\r
+      </klay:DeleteCustomerRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://klayrocha.com.br/CustomerPort/DeleteCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7b2f2bc4-c5d3-4401-b6f2-8394d57c965c" isOneWay="false" action="" name="GetAllCustomerDetail" bindingOperationName="GetAllCustomerDetail" type="Request-Response" outputName="GetAllCustomerDetailResponse" inputName="GetAllCustomerDetailRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8695073e-0932-4c7c-abf1-28035b1cb41e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:klay="http://klayrocha.com.br">\r
+   <soapenv:Header>\r
+      <wsse:Security mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">\r
+         <wsse:UsernameToken>\r
+            <wsse:Username>klay</wsse:Username>\r
+            <wsse:Password>123</wsse:Password>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <klay:GetAllCustomerDetailRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://klayrocha.com.br/CustomerPort/GetAllCustomerDetailRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2f1c3de6-e690-4a43-b434-3c97eab89f62" isOneWay="false" action="" name="GetCustomerDetail" bindingOperationName="GetCustomerDetail" type="Request-Response" outputName="GetCustomerDetailResponse" inputName="GetCustomerDetailRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="459150f7-3b22-4236-8203-51ae381dc9a5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:klay="http://klayrocha.com.br">\r
+   <soapenv:Header>\r
+      <wsse:Security mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">\r
+         <wsse:UsernameToken>\r
+            <wsse:Username>klay</wsse:Username>\r
+            <wsse:Password>123</wsse:Password>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <klay:GetCustomerDetailRequest>\r
+         <klay:id>1</klay:id>\r
+      </klay:GetCustomerDetailRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://klayrocha.com.br/CustomerPort/GetCustomerDetailRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="82ff7d59-4ad7-481a-8db8-644e7fa9d5f2" isOneWay="false" action="" name="InsertCustomer" bindingOperationName="InsertCustomer" type="Request-Response" outputName="InsertCustomerResponse" inputName="InsertCustomerRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b17015fd-4e75-4cd7-b619-4aef7b1ebb01" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:klay="http://klayrocha.com.br">\r
+   <soapenv:Header>\r
+      <wsse:Security mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">\r
+         <wsse:UsernameToken>\r
+            <wsse:Username>klay</wsse:Username>\r
+            <wsse:Password>123</wsse:Password>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <klay:InsertCustomerRequest>\r
+         <klay:CustomerDetail>\r
+            <klay:name>Mark Rocha</klay:name>\r
+            <klay:phone>989 499 276</klay:phone>\r
+            <klay:email>mark@gmail.com</klay:email>\r
+         </klay:CustomerDetail>\r
+      </klay:InsertCustomerRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://klayrocha.com.br/CustomerPort/InsertCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
